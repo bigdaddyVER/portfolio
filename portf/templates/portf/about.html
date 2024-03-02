@@ -1,0 +1,61 @@
+{% extends 'portf/layout/main.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Change</title>
+    <style>
+      html, body {
+        height: 135%;
+        margin: 0;
+        padding: 0;
+    }
+        body {
+            background-image: url('{% static 'images/bg1.png' %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .content {
+          text-align: center;
+          padding: 50px;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align: center; margin: 100px;">
+<img src="{% static 'images/pogi.png'%}" alt="d" width="250" height="250">
+<h1><b>Anvier M. Yap</b></h1>
+<h3>About me</h3>
+<div style="margin-right: 550px; margin-left: 550px;">
+<p>A highly passionate student taking the degree Bachelor of Science in Information Technology that has excellent client and project management skill with intensive knowledge in trouble shooting, building computers, repairs and graphics designing. A hardworking, diligent and flexible in his field.</p>
+</div>
+<h3>Contact</h3>
+<h5>Address</h5>
+<p>Feliciano Compound, San Roque, Zamboanga City ,Zamboanga Del Sur</p>
+<h5>Phone</h5>
+<p>+639169401638</p>
+<h3>Education</h3>
+<h5>Under Graduate</h5>
+<p>2020-present</p>
+<p>Western Mindanao State University</p>
+<h5>High School</h5>
+<h5>Senior High School</h5>
+<div><p>2018-2020</p></div>
+<div><p>AMA Computer College</p></div>
+<h5>Junior High School</h5>
+<div><p>2014-2018</p></div>
+<div><p>Zamboanga Avalokitesvara School</p></div>
+<div>
+<a href="https://www.facebook.com/bigdaddyVER">
+<img src="{% static 'images/fb.png'%}" alt="fb" width="25" height="24"></a> <a href="https://www.instagram.com/bigdaddy_ver/"> <img src="{% static 'images/insta.png'%}" alt="insta" width="25" height="24"></a>
+</div>
+<img src="{% static 'images/mail.png'%}" alt="mail" width="25" height="24">Yap_Ani@gmail.com</a>
+
+</body>
+</html>
+{% endblock %}
