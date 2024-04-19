@@ -1,5 +1,4 @@
 {% extends 'portf/layout/main.html' %}
-{% load static %}
 
 {% block content %}
 <!DOCTYPE html>
@@ -7,7 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Change</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'what.css'%}"/>
+    <title></title>
     <style>
       html, body {
         height: 100%;
@@ -15,21 +16,30 @@
         padding: 0;
     }
         body {
-            background-image: url('{% static 'images/bg.png' %}');
+            background-image: url('static/images/bg.PNG');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-        }
-        .content {
-          text-align: center;
-          padding: 50px;
+            background-attachment: fixed;
         }
     </style>
 </head>
 <body>
-  <div class="content">
-    <b>Hello my name is Aniver Yap and im pogi</b>
-  </div>
+  <section class="home" id="home">
+    <div class="home-content">
+      <h3>Hello, my name</h3>
+      <h1>Aniver Yap</h1>
+      <h3>and im a <span class="element"></span></h3>                      
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <script>
+    var typed = new Typed('.element', {
+        strings: ['pogi.', 'graphics designer.', 'frontend developer.'],
+        typeSpeed: 20,
+        loop: true
+    });
+</script>
 </body>
 </html>
 {% endblock %}

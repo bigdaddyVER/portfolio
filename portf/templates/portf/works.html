@@ -1,51 +1,34 @@
 {% extends 'portf/layout/main.html' %}
 {% load static %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'lightbox2/css/lightbox.min.css' %}">
+{% endblock %}
+
 {% block content %}
-<div style="text-align: center;">
-    <h2>Art</h2>
-    {% include 'portf/inc/slider.html' %}
-    <h2>Eto lang muna sana walang judgement hahaha</h2>
-    
-    <div class="container">
-        <h2>AMAbay e commerce</h2>
-        <div class="album" style="display: grid; grid-template-columns: repeat(3, 1fr); grid-gap: 20px;">
-            <div class="photo">
-                <img src="{% static 'images/ec 1.png' %}" alt="Photo 1" style="max-width: 105%; height: auto;">
-                <div class="caption">Home</div>
-            </div>
-            <div class="photo">
-                <img src="{% static 'images/ec 2.png' %}" alt="Photo 2" style="max-width: 105%; height: auto;">
-                <div class="caption">About us</div>
-            </div>
-            <div class="photo">
-                <img src="{% static 'images/ec 3.png' %}" alt="Photo 3" style="max-width: 105%; height: auto;">
-                <div class="caption">Collections</div>
-            </div>
-            <div class="photo">
-                <img src="{% static 'images/ec 4.png' %}" alt="Photo 4" style="max-width: 105%; height: auto;">
-                <div class="caption">Product</div>
-            </div>
-            <div class="photo">
-                <img src="{% static 'images/ec 5.png' %}" alt="Photo 5" style="max-width: 105%; height: auto;">
-                <div class="caption">User Registration</div>
-            </div>
-            <div class="photo">
-                <img src="{% static 'images/ec 6.png' %}" alt="Photo 6" style="max-width: 105%; height: auto;">
-                <div class="caption">Log in page</div>
-            </div>
-            <div class="photo">
-                <img src="{% static 'images/ec 7.png' %}" alt="Photo 7" style="max-width: 105%; height: auto;">
-                <div class="caption">Cart</div>
-            </div>
-            <div class="photo">
-                <img src="{% static 'images/ec 8.png' %}" alt="Photo 8" style="max-width: 105%; height: auto;">
-                <div class="caption">Check out</div>
-            </div>
-            <div class="photo">
-                <img src="{% static 'images/ec 9.png' %}" alt="Photo 9" style="max-width: 105%; height: auto;">
-                <div class="caption">Order status</div>
+<div class="container">
+    <div style="text-align: center;">
+        <h2 style="color: blue;">Art</h2>
+        {% include 'portf/inc/slider.html' %}
+        <h1>&nbsp;</h1>
+        <h2 style="color: blue;">Website</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>AMAbay e-commerce</h2>
+                <div class="row">
+                    {% for web in website %}
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="{{ web.image.url }}" data-lightbox="web-gallery" data-title="{{ web.title }}">
+                            <img src="{{ web.image.url }}" class="card-img-top" alt="{{ web.title }}" style="max-width: 100%; height: auto;">
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
     </div>
 </div>
 {% endblock content %}
+
+{% block extra_js %}
+<script src="{% static 'lightbox2/js/lightbox.min.js' %}"></script>
+{% endblock %}
